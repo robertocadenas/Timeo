@@ -1,0 +1,114 @@
+Data:
+    $content
+        Books
+        Articles
+    $feedback
+        Comments
+        Favorites
+    $people
+        Authors
+        Members
+        Others
+    $company
+        Publisher
+        Media
+        Bookshop
+    $purchase
+
+Pages:
+    1) Catalogs
+        Content catalog
+            Books  (list)
+            Articles (list)
+        People Directory
+            Authors (list)
+            Members (list)
+        Companies Directory
+            Books (list)
+            Authors (list)
+            Articles (list)
+
+    2) Details
+        Book
+            Authors (list)
+            Articles - about (list)
+            Comments - about (list)
+        Author
+            Books (list)
+            Articles - by (list)
+            Articles - about (list)
+        Member
+            Favorites -like (List)
+            Comments (list with detail)
+        Companies
+            Books (list)
+            Authors (list)
+            Articles (list)
+
+    2) Search results
+        Filters:
+            Books
+            Articles
+            Authors
+            Members
+            Publishers
+            Media
+inc
+    header
+    footer
+    catalog
+    detail
+    login
+    cookie
+    feedback
+    buy
+    search
+
+
+Persistent data
+    Search engine - get form
+    Login - post form & Session
+    Navigation tracker - User Cookie
+    Shopping cart for anonymous -> User Cookie
+    Shopping cart for identified -> login Session
+    Opinion - login Session
+
+    $_GET["cat"] -- url & header.php to navigate
+    $_GET["end"] -- at index.php to destroy session
+    $_GET["id"] -- from content_catalog.php to content_detail.php to identify the item.
+    $_GET["id"] -- from people_directory.php to people_detail.php to identify the people.
+    $_GET["id"] -- from company_directory.php to company_detail.php to identify the people.
+    $_GET["search"] -- from header.php to search_results.php to query string
+    $_GET['shop_item'] -- from buy.php to cookie.php to trigger the cookie creation
+
+    $_POST["like"] -- from feedback.php to feedback.php
+    $_POST["comment"] -- from feedback.php to feedback.php
+    $_POST["email"] -- from login_function.php to login_function.php
+    $_POST["password"] -- from login_function.php to login_function.php
+
+    $_SESSION['item_id'] = $id;
+    $_SESSION['userid'] -- from login_function.php
+
+    $_COOKIE from cookie.php to shopping_cart.php
+
+
+
+
+
+
+
+
+
+Filters
+
+
+
+
+About structure:
+Would be a good idea to put all of the "include()" in the header.php?
+And open there the session too - session_start()? isn't a problem to call the session_start() every time you use header.php?
+
+About forms:
+If it's better to only use a form in a page, how can you manage search engine, shopping list or feedback from users?
+All in one form?
+What can you do if you need to types of forms? Get for search engine and Post for login in the same page?

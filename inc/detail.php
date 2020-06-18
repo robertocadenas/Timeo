@@ -1,6 +1,6 @@
 <?php
 
-include("inc/data.php");
+include("data/data_books.php");
 include("inc/functions.php");
 
 
@@ -13,7 +13,7 @@ if (isset($_GET["id"])){
 }
 
 if (!isset($item)) {
-    header("location:catalogo.php");
+    header("location:catalog.php");
     exit;
 }
 
@@ -27,6 +27,8 @@ include("inc/header.php");?>
 
     <div class="wrapper">
 
+        <h1><?php echo $item["title"] ?></h1>
+
         <div class="media-picture">
         <span>
             <img src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>" width= "400px" />
@@ -34,7 +36,7 @@ include("inc/header.php");?>
         </div>
 
         <div class="media-details">
-            <h1><?php echo $item["title"] ?></h1>
+            <h2>Book information</h2>
             <table>
                 <tr>
                     <th>Autor</th>
@@ -59,10 +61,8 @@ include("inc/header.php");?>
             </table>
         </div>
         <div>
-            <?php include('inc/comprar.php'); ?>
-            <?php include('inc/participa.php'); ?>
-            <?php include('inc/comprarDataList.php'); ?>
-            <?php include('inc/login.php'); ?>
+            <?php include('inc/buy.php'); ?>
+            <?php include('inc/feedback.php'); ?>
         </div>
     </div>
 

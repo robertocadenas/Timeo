@@ -6,6 +6,7 @@
 
 			<ul>
 				<li><a href="http://twitter.com/">Twitter</a></li>
+				<li><a href="https://www.facebook.com/">Instagram</a></li>
 				<li><a href="https://www.facebook.com/">Facebook</a></li>
 			</ul>
 
